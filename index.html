@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Engineering Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar">
+    <div class="logo">Your Name</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- HOOK: add a dark-mode toggle button here later -->
+      <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Hi, I'm <span class="accent">Your Name</span></h1>
+      <p class="subtitle">Mechanical Engineer · Robotics · Design</p>
+      <p class="tagline">I build things that move, think, and solve real problems.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="assets/resume.pdf" class="btn btn-outline" target="_blank">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <img src="images/headshot.jpg" alt="Your headshot" class="about-img" />
+      <div class="about-text">
+        <p>
+          Write a short bio here. Mention your engineering discipline,
+          what you're passionate about, your current focus, and what
+          kind of opportunities you're looking for.
+        </p>
+        <p>
+          Add a second paragraph about your background, education, or
+          a defining project or interest.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <!-- HOOK: add filter buttons here (e.g., filter by category) later -->
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="mechanical">Mechanical</button>
+      <button class="filter-btn" data-filter="software">Software</button>
+      <button class="filter-btn" data-filter="research">Research</button>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Project Card (duplicate this block per project) -->
+      <article class="project-card" data-category="mechanical">
+        <img src="images/project1.jpg" alt="Project 1" class="project-img" />
+        <div class="project-body">
+          <h3>Project Title</h3>
+          <p>Short description of the project, the problem it solves, and your role.</p>
+          <ul class="tech-tags">
+            <li>SolidWorks</li>
+            <li>3D Printing</li>
+            <li>Arduino</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="software">
+        <img src="images/project2.jpg" alt="Project 2" class="project-img" />
+        <div class="project-body">
+          <h3>Project Title</h3>
+          <p>Short description of the project, the problem it solves, and your role.</p>
+          <ul class="tech-tags">
+            <li>Python</li>
+            <li>NumPy</li>
+            <li>MATLAB</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="research">
+        <img src="images/project3.jpg" alt="Project 3" class="project-img" />
+        <div class="project-body">
+          <h3>Project Title</h3>
+          <p>Short description of the project, the problem it solves, and your role.</p>
+          <ul class="tech-tags">
+            <li>ANSYS</li>
+            <li>CFD</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" target="_blank">Paper</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Software & Tools</h3>
+        <ul>
+          <li>SolidWorks / Fusion 360</li>
+          <li>ANSYS / CFD</li>
+          <li>MATLAB / Simulink</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Programming</h3>
+        <ul>
+          <li>Python</li>
+          <li>C / C++</li>
+          <li>Arduino / Embedded</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Other</h3>
+        <ul>
+          <li>3D Printing / Prototyping</li>
+          <li>PCB Design</li>
+          <li>Technical Writing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="contact-text">
+      I'm always open to new opportunities and collaborations. Reach out!
+    </p>
+    <div class="contact-links">
+      <a href="mailto:you@email.com" class="btn btn-primary">Email Me</a>
+      <a href="https://linkedin.com/in/yourname" class="btn btn-outline" target="_blank">LinkedIn</a>
+      <a href="https://github.com/yourusername" class="btn btn-outline" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Your Name. Built with GitHub Pages.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
