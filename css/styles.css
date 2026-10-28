@@ -168,3 +168,52 @@ nav { display: flex; align-items: center; gap: 1.5rem; }
   .projects-intro h1 { font-size: 2rem; }
   nav { gap: 1rem; }
 }
+/* ===== ABOUT BLURB ===== */
+.about-blurb {
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+  text-align: center;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+/* ===== FIGURES (real images) ===== */
+.fig { margin: 1.25rem 0; }
+.fig img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: block;
+}
+.featured-img { max-height: 460px; object-fit: cover; }
+.fig figcaption {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* ===== TIMELINE ===== */
+.timeline { list-style: none; position: relative; margin-top: 1rem; padding-left: 1.5rem; }
+.timeline::before {
+  content: ""; position: absolute; left: 7px; top: 4px; bottom: 4px;
+  width: 2px; background: var(--border);
+}
+.timeline-item { position: relative; padding: 0 0 1.5rem 1.5rem; }
+.timeline-dot {
+  position: absolute; left: -1.5rem; top: 4px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--bg); border: 3px solid var(--border);
+}
+.timeline-item.done .timeline-dot   { border-color: var(--accent); background: var(--accent); }
+.timeline-item.active .timeline-dot { border-color: var(--accent); background: var(--bg); box-shadow: 0 0 0 4px rgba(30,95,216,0.2); }
+.timeline-item.future .timeline-dot { border-color: var(--border); background: var(--bg); }
+.timeline-content h4 { font-size: 1rem; margin-bottom: 0.25rem; }
+.timeline-content p { font-size: 0.9rem; color: var(--muted); margin: 0; }
+.tl-tag {
+  display: inline-block; font-size: 0.7rem; font-weight: 600;
+  padding: 0.15rem 0.5rem; border-radius: 12px; margin-left: 0.4rem;
+  background: var(--accent); color: #fff; vertical-align: middle;
+}
+.tl-tag.future-tag { background: var(--border); color: var(--muted); }
