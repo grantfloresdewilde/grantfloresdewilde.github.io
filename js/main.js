@@ -1,7 +1,7 @@
-// ===== Auto-update footer year =====
+// Auto-update footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ===== DARK MODE TOGGLE =====
+// Dark mode toggle
 const themeToggle = document.getElementById("theme-toggle");
 themeToggle.addEventListener("click", () => {
   const html = document.documentElement;
@@ -10,24 +10,22 @@ themeToggle.addEventListener("click", () => {
   themeToggle.textContent = isDark ? "🌙" : "☀️";
 });
 
-// ===== PROJECT FILTERING =====
+// Project filtering
 const filterButtons = document.querySelectorAll(".filter-btn");
 const projectCards = document.querySelectorAll(".project-card");
-
 filterButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     filterButtons.forEach((b) => b.classList.remove("active"));
     btn.classList.add("active");
-
     const filter = btn.getAttribute("data-filter");
     projectCards.forEach((card) => {
       const category = card.getAttribute("data-category");
-      card.style.display = (filter === "all" || filter === category) ? "block" : "none";
+      card.style.display = (filter === "all" || filter === category) ? "flex" : "none";
     });
   });
 });
 
-// ===== SMOOTH SCROLL (Contact link in header) =====
+// Smooth scroll for in-page links
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", function (e) {
     e.preventDefault();
