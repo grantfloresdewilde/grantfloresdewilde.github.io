@@ -214,3 +214,33 @@ nav { display: flex; align-items: center; gap: 1.5rem; }
   background: var(--accent); color: #fff; vertical-align: middle;
 }
 .tl-tag.future-tag { background: var(--border); color: var(--muted); }
+
+/* ===== READ MORE BUTTON + COLLAPSIBLE CASE STUDY ===== */
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.2s;
+}
+.read-more-btn:hover { transform: translateY(-2px); }
+.read-more-btn .chev { transition: transform 0.25s; }
+.read-more-btn.open .chev { transform: rotate(180deg); }
+
+.case-details[hidden] { display: none; }
+.case-details {
+  margin-top: 0.5rem;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
