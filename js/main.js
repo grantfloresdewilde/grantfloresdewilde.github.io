@@ -33,3 +33,22 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     if (target) target.scrollIntoView({ behavior: "smooth" });
   });
 });
+// ===== FEATURED CASE STUDY EXPAND / COLLAPSE =====
+const caseToggle = document.getElementById("case-toggle");
+const caseDetails = document.getElementById("case-details");
+if (caseToggle && caseDetails) {
+  caseToggle.addEventListener("click", () => {
+    const isOpen = !caseDetails.hasAttribute("hidden");
+    if (isOpen) {
+      caseDetails.setAttribute("hidden", "");
+      caseToggle.setAttribute("aria-expanded", "false");
+      caseToggle.classList.remove("open");
+      caseToggle.childNodes[0].textContent = "Read full case study ";
+    } else {
+      caseDetails.removeAttribute("hidden");
+      caseToggle.setAttribute("aria-expanded", "true");
+      caseToggle.classList.add("open");
+      caseToggle.childNodes[0].textContent = "Show less ";
+    }
+  });
+}
