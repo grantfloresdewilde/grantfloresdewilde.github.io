@@ -244,3 +244,15 @@ nav { display: flex; align-items: center; gap: 1.5rem; }
   from { opacity: 0; transform: translateY(-6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+/* ===== YEAR TAGS (outlined, distinct from skill tags) ===== */
+.tech-tags li.year-tag {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+/* Spacing for the year tags under the featured header */
+.header-tags { margin: 0.9rem 0 0; }
+
+/* Logo image sizing (only needed if you used the logo.svg option) */
+.logo-img { height: 34px; display: block; }
