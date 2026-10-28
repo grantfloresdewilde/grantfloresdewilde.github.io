@@ -3,105 +3,411 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name — Engineering Portfolio</title>
+  <title>Grant Flores-DeWilde — Engineering Portfolio</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
   <!-- ===== SLIM HEADER ===== -->
   <header class="navbar">
-    <div class="logo">Your Name</div>
+    <div class="logo">Grant Flores-DeWilde</div>
     <nav>
+      <a href="#about" class="nav-contact">About</a>
+      <a href="#skills" class="nav-contact">Skills</a>
       <a href="#contact" class="nav-contact">Contact</a>
-      <!-- Dark-mode toggle -->
       <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
     </nav>
   </header>
 
-  <!-- ===== PROJECTS (first thing you see) ===== -->
-  <section class="section projects-section" id="projects">
+  <!-- ===== ABOUT ME ===== -->
+  <section class="section intro-section" id="about">
     <div class="projects-intro">
-      <h1>Engineering Projects</h1>
-      <p class="tagline">A selection of things I've designed, built, and solved.</p>
+      <h1>Grant Flores-DeWilde</h1>
+      <p class="tagline">Mechanical Engineering · FEA · Precision Manufacturing · Robotics</p>
     </div>
+    <p class="about-blurb">
+      I'm a Mechanical Engineering student (BSE) and Ben Franklin Scholar at the
+      University of Pennsylvania who likes taking a design from simulation all the way
+      to a machined, tested part. As HV Battery Pack Responsible Engineer for Penn
+      Electric Racing, I lead the mechanical design and manufacturing of our Formula SAE
+      high-voltage battery system; in the lab I build fixtures and mechanisms for
+      reconfigurable robots at ModLab and teach precision machining to fellow students.
+      I care about rules-driven design, clean manufacturing, and backing up decisions
+      with analysis and prototypes.
+    </p>
+  </section>
 
-    <!-- Filter buttons -->
+  <!-- ===== FEATURED PROJECT: HV BATTERY PACK ===== -->
+  <section class="section featured-section" id="projects">
+    <article class="featured-card">
+      <div class="featured-header">
+        <span class="featured-badge">Featured Project</span>
+        <h2>High-Voltage Battery Pack &amp; Battery Management Enclosure</h2>
+        <p class="featured-meta">
+          Penn Electric Racing (Formula SAE Electric) · Mechanical HV Pack Lead /
+          Responsible Engineer · 2025–Present
+        </p>
+      </div>
+
+      <!-- Hero image -->
+      <figure class="fig">
+        <img src="images/pack-in-chassis.png"
+             alt="High-voltage battery pack installed within the Formula SAE tubular chassis"
+             class="featured-img" />
+        <figcaption>HV pack integrated within the Formula SAE tubular chassis (CAD render).</figcaption>
+      </figure>
+
+      <!-- Key metrics -->
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num">62.1%</span>
+          <span class="stat-label">Mounting tab mass reduction (286.7 g)</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">88.7%</span>
+          <span class="stat-label">Battery management enclosure volume increase</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">40g / 20g</span>
+          <span class="stat-label">Prescribed lateral / vertical FEA load cases</span>
+        </div>
+      </div>
+
+      <p class="featured-lead">
+        A mechanically integrated HV battery system designed for a new four-wheel-drive
+        electric race car: welded 6061-T6 containment, mass-optimized chassis mounting,
+        and a larger serviceable enclosure for battery management hardware. I owned the
+        mechanical containment geometry, packaging, and enclosure interfaces; the cell
+        substacks and electronic boards were developed by other team members.
+      </p>
+
+      <!-- System & ownership -->
+      <div class="sub-block">
+        <h3>System architecture &amp; ownership</h3>
+        <p>
+          I designed the welded aluminum tractive battery container that protects and
+          surrounds the cell substacks, as well as the separate battery management
+          enclosure — including the arrangement of its COTS hardware and the mechanical
+          mounting and connector interfaces. A teammate designed the cell substacks, and
+          the electrical team owns the PCB designs. The redesign supports the vehicle's
+          transition from rear-wheel drive to four-wheel drive while balancing Formula SAE
+          requirements, mass, thermal constraints, waterproofing, chassis clearance, and
+          serviceability.
+        </p>
+        <figure class="fig">
+          <img src="images/pack-assembly.png"
+               alt="Battery management enclosure mounted above the main tractive battery container" />
+          <figcaption>Battery management enclosure mounted above the main tractive container.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Primary container + table -->
+      <div class="sub-block">
+        <h3>Rules-driven container &amp; mounting optimization</h3>
+        <p>
+          The container is built from 0.09-inch 6061-T6 aluminum panels — the applicable
+          minimum sheet thickness — designed for welded construction against Formula SAE
+          Structural Equivalency Spreadsheet (SES) requirements. I iteratively reduced the
+          mounting-tab geometry and evaluated the redesign with FEA under the prescribed
+          40g lateral and 20g vertical acceleration load cases. Each tab is designed to be
+          waterjet-cut, bent, and welded to the chassis; the container bolts into these tabs
+          for removal and installation.
+        </p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Tab set</th><th>Before</th><th>After</th>
+              <th>Mass reduction</th><th>Updated-model SF</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Front (2)</td><td>329.68 g</td><td>110.58 g</td><td>66.5%</td><td>1.081</td></tr>
+            <tr><td>Rear (2)</td><td>132.32 g</td><td>64.73 g</td><td>51.1%</td><td>1.072</td></tr>
+            <tr><td>Total (4)</td><td>462.00 g</td><td>175.31 g</td><td>62.1% (286.69 g)</td><td>Min: 1.072</td></tr>
+          </tbody>
+        </table>
+        <p class="caveat">
+          Safety factors are FEA predictions for the modeled load cases using the updated
+          CAD substack mass estimate (with the more conservative SES mass estimate: 1.035
+          front / 1.026 rear). Full-container FEA and physical testing are not yet complete,
+          so the container is not claimed to be structurally validated.
+        </p>
+        <figure class="fig">
+          <img src="images/primary-container.png"
+               alt="Main tractive battery container showing internal arrangement and mounting interfaces" />
+          <figcaption>Main tractive battery container — structural packaging and mounting interfaces.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Packaging + thermal -->
+      <div class="sub-block">
+        <h3>Cell packaging &amp; passive cooling</h3>
+        <p>
+          The team evaluated whether passive heat rejection would be sufficient for the
+          higher-capacity pack. Endurance-run thermal simulations predicted cell
+          temperatures would remain below the 60 °C limit for the modeled operating
+          conditions, so passive cooling was selected over a liquid system — avoiding extra
+          weight and complexity and removing the need for ventilation openings through the
+          waterproof container.
+        </p>
+        <p class="caveat">
+          This result supports the cooling concept for the simulated endurance-run
+          assumptions only; it does not establish that every operating condition has been
+          validated or that cells can never exceed 60 °C.
+        </p>
+        <figure class="fig">
+          <img src="images/exploded-view.png"
+               alt="Exploded view of the cell substacks and primary container" />
+          <figcaption>Exploded view of cell substacks and container (substacks designed by a teammate).</figcaption>
+        </figure>
+      </div>
+
+      <!-- Enclosure -->
+      <div class="sub-block">
+        <h3>Battery management enclosure: integration &amp; serviceability</h3>
+        <p>
+          I designed the enclosure around the electrical team's boards and COTS devices,
+          determining their locations and the interfaces needed to mount and connect them
+          while balancing connector access, fastener reach, installation clearances, and
+          chassis-tube avoidance. The redesigned internal cavity grew from ≈7.95 L to
+          15.00 L (an 88.7% increase, CAD internal-volume measurement). I produced a
+          full-scale PLA fit-check print to verify COTS fit, bolt accessibility, and cutout
+          sizing ahead of the intended ULTEM production.
+        </p>
+        <p class="caveat">
+          The enclosure is designed for additive manufacturing in ULTEM, pending
+          clarification of an applicable Formula SAE rule. The PLA fit check verifies
+          geometry only — not final material performance or environmental qualification.
+        </p>
+        <figure class="fig">
+          <img src="images/management-enclosure.png"
+               alt="Battery management enclosure with installed COTS connectors and internal components" />
+          <figcaption>Battery management enclosure with COTS connectors and internal components.</figcaption>
+        </figure>
+      </div>
+
+      <!-- ===== BUILD / VALIDATION TIMELINE ===== -->
+      <div class="sub-block">
+        <h3>Build &amp; validation timeline</h3>
+        <ul class="timeline">
+          <li class="timeline-item done">
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>RWD → 4WD redesign kickoff</h4>
+              <p>Larger, heavier pack required; container and enclosure redesign scoped
+                 against updated battery architecture and FSAE rules.</p>
+            </div>
+          </li>
+          <li class="timeline-item done">
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>FEA-driven mounting-tab optimization</h4>
+              <p>286.7 g removed (62.1%) across four tabs; predicted safety factors of
+                 1.081 (front) and 1.072 (rear) under 40g / 20g load cases.</p>
+            </div>
+          </li>
+          <li class="timeline-item done">
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>Thermal trade study → passive cooling</h4>
+              <p>Endurance-run simulations supported passive cooling under modeled
+                 conditions, preserving the waterproof, vent-free container.</p>
+            </div>
+          </li>
+          <li class="timeline-item done">
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>Enclosure redesign &amp; PLA fit-check print</h4>
+              <p>Internal cavity enlarged 88.7%; full-scale PLA prototype verified COTS fit,
+                 fastener reach, and cutout sizing.</p>
+            </div>
+          </li>
+          <li class="timeline-item active">
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>Container welding &amp; procurement <span class="tl-tag">In progress (Oct 2026)</span></h4>
+              <p>Container entering welding; busbars, grounding strips, and Garolite
+                 insulating dividers ordered.</p>
+            </div>
+          </li>
+          <li class="timeline-item future">
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>ULTEM enclosure production <span class="tl-tag future-tag">Planned</span></h4>
+              <p>Final ULTEM print pending clarification of an applicable Formula SAE rule.</p>
+            </div>
+          </li>
+          <li class="timeline-item future">
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>Assembly &amp; physical validation <span class="tl-tag future-tag">Planned</span></h4>
+              <p>Welded-assembly inspection, pack assembly, and full physical validation
+                 remain future activities.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===== ADDITIONAL PROJECTS GRID ===== -->
+  <section class="section">
+    <h2 class="section-title">More Projects</h2>
+
     <div class="filter-bar" id="filter-bar">
       <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="mechanical">Mechanical</button>
-      <button class="filter-btn" data-filter="software">Software</button>
-      <button class="filter-btn" data-filter="research">Research</button>
+      <button class="filter-btn" data-filter="fsae">Formula SAE</button>
+      <button class="filter-btn" data-filter="research">Robotics Research</button>
+      <button class="filter-btn" data-filter="design">Design &amp; Build</button>
     </div>
 
     <div class="projects-grid">
-      <!-- Project Card (duplicate this block per project) -->
-      <article class="project-card" data-category="mechanical">
-        <img src="images/project1.jpg" alt="Project 1" class="project-img" />
+
+      <article class="project-card" data-category="fsae">
+        <div class="img-placeholder card-img"><span>Image: vibration-fixture.jpg</span></div>
         <div class="project-body">
-          <h3>Project Title</h3>
-          <p>Short description of the project, the problem it solves, and your role.</p>
-          <ul class="tech-tags">
-            <li>SolidWorks</li>
-            <li>3D Printing</li>
-            <li>Arduino</li>
-          </ul>
-          <div class="project-links">
-            <a href="#" target="_blank">GitHub</a>
-            <a href="#" target="_blank">Demo</a>
-          </div>
+          <h3>Vibration Test Fixture</h3>
+          <p>
+            Custom fixture for Penn Electric Racing capable of a 334% higher theoretical
+            excitation frequency than the previous design, using linear bearings to improve
+            stability and constrain motion during testing.
+          </p>
+          <ul class="tech-tags"><li>SolidWorks</li><li>FEA</li><li>Linear Bearings</li></ul>
         </div>
       </article>
 
-      <article class="project-card" data-category="software">
-        <img src="images/project2.jpg" alt="Project 2" class="project-img" />
+      <article class="project-card" data-category="fsae">
+        <div class="img-placeholder card-img"><span>Image: charge-cart.jpg</span></div>
         <div class="project-body">
-          <h3>Project Title</h3>
-          <p>Short description of the project, the problem it solves, and your role.</p>
-          <ul class="tech-tags">
-            <li>Python</li>
-            <li>NumPy</li>
-            <li>MATLAB</li>
-          </ul>
-          <div class="project-links">
-            <a href="#" target="_blank">GitHub</a>
-            <a href="#" target="_blank">Demo</a>
-          </div>
+          <h3>Battery Charge Cart &amp; Manufacturing Jigs</h3>
+          <p>
+            Designed and manufactured a battery charge cart, suspension mounting tabs, and
+            15 manufacturing jigs to support vehicle assembly and testing. Also supported
+            suspension control-arm compression testing.
+          </p>
+          <ul class="tech-tags"><li>SolidWorks</li><li>Fabrication</li><li>DFM</li></ul>
         </div>
       </article>
 
       <article class="project-card" data-category="research">
-        <img src="images/project3.jpg" alt="Project 3" class="project-img" />
+        <div class="img-placeholder card-img"><span>Image: actuator-fixture.jpg</span></div>
         <div class="project-body">
-          <h3>Project Title</h3>
-          <p>Short description of the project, the problem it solves, and your role.</p>
-          <ul class="tech-tags">
-            <li>ANSYS</li>
-            <li>CFD</li>
-          </ul>
-          <div class="project-links">
-            <a href="#" target="_blank">Paper</a>
-          </div>
+          <h3>Twisted-String Actuator Fatigue Fixture</h3>
+          <p>
+            At ModLab (Pennovation Works), designed a custom fatigue-testing fixture for
+            twisted-string actuators on a self-configurable modular robot. Redesigned the
+            actuator with bearing integration and symmetric geometry, increasing fatigue life
+            from 10,000 to 50,000 cycles (5× improvement).
+          </p>
+          <ul class="tech-tags"><li>SolidWorks</li><li>Design for Test</li><li>Fatigue</li></ul>
+          <div class="project-links"><span class="note">Acknowledged — IEEE ICRA 2027 submission</span></div>
         </div>
       </article>
+
+      <article class="project-card" data-category="research">
+        <div class="img-placeholder card-img"><span>Image: vtt-docking.jpg</span></div>
+        <div class="project-body">
+          <h3>Variable Topology Truss — Docking Mechanism</h3>
+          <p>
+            Designing and prototyping a docking mechanism for the Variable Topology Truss
+            (VTT), a reconfigurable robotic structure at ModLab. <em>Ongoing.</em>
+          </p>
+          <ul class="tech-tags"><li>SolidWorks</li><li>Mechanism Design</li><li>Prototyping</li></ul>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="design">
+        <div class="img-placeholder card-img"><span>Image: stirling-engine.jpg</span></div>
+        <div class="project-body">
+          <h3>Spider-Man Stirling Engine</h3>
+          <p>
+            Designed, precision-machined, and assembled a custom Spider-Man-themed Stirling
+            engine on manual mills and lathes, reaching operational speeds of 500 RPM.
+          </p>
+          <ul class="tech-tags"><li>Manual Machining</li><li>GD&amp;T</li><li>Assembly</li></ul>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="design">
+        <div class="img-placeholder card-img"><span>Image: polaris-compass.jpg</span></div>
+        <div class="project-body">
+          <h3>Polaris — GPS Anchored Compass</h3>
+          <p>
+            Developed a GPS-based electronic compass that points back to user-defined
+            waypoints, integrating an Arduino, GPS, IMU, and LED matrix for real-time
+            directional feedback and distance information.
+          </p>
+          <ul class="tech-tags"><li>Arduino</li><li>GPS / IMU</li><li>Embedded C++</li></ul>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="design">
+        <div class="img-placeholder card-img"><span>Image: wind-tunnel.jpg</span></div>
+        <div class="project-body">
+          <h3>Drag Coefficients of 3D Shapes at Terminal Velocity</h3>
+          <p>
+            Built a wind tunnel from office supplies at PGSS (Carnegie Mellon) to study the
+            effect of shape on drag. Led data analysis and error discussion, verifying drag
+            coefficients within 97% of NASA's accepted values.
+          </p>
+          <ul class="tech-tags"><li>Aerodynamics</li><li>Data Analysis</li><li>Experimental Design</li></ul>
+        </div>
+      </article>
+
     </div>
   </section>
 
-  <!-- ===== SHORT CONTACT SECTION ===== -->
+  <!-- ===== SKILLS + EDUCATION ===== -->
+  <section class="section" id="skills">
+    <h2 class="section-title">Skills &amp; Education</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Software</h3>
+        <ul>
+          <li>CAD — SolidWorks, Autodesk, Onshape</li>
+          <li>Finite Element Analysis (FEA)</li>
+          <li>Python, Java, OCaml</li>
+          <li>Arduino IDE</li>
+          <li>CNC — Mastercam, ProtoTRAK</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Hardware &amp; Manufacturing</h3>
+        <ul>
+          <li>Manual milling &amp; turning</li>
+          <li>3D printing (incl. ULTEM/PLA)</li>
+          <li>Laser cutting</li>
+          <li>GD&amp;T &amp; tolerance stack-up</li>
+          <li>Circuits &amp; precision metrology</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Education</h3>
+        <ul>
+          <li>University of Pennsylvania</li>
+          <li>BSE, Mechanical Engineering</li>
+          <li>Ben Franklin Scholar · 3.82 GPA</li>
+          <li>Expected May 2029</li>
+          <li>Spanish — intermediate</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
   <section class="contact-section" id="contact">
     <h2>Get In Touch</h2>
     <p class="contact-text">
-      Interested in working together or have a question? I'd love to hear from you.
+      Interested in my work or have an opportunity to discuss? I'd love to hear from you.
     </p>
     <div class="contact-links">
-      <a href="mailto:you@email.com" class="btn btn-primary">Email Me</a>
-      <a href="https://linkedin.com/in/yourname" class="btn btn-outline" target="_blank">LinkedIn</a>
-      <a href="https://github.com/yourusername" class="btn btn-outline" target="_blank">GitHub</a>
+      <a href="mailto:gfloresd@engineering.upenn.edu" class="btn btn-primary">Email Me</a>
+      <a href="https://www.linkedin.com/in/grant-flores-dewilde-a471153b0/" class="btn btn-outline" target="_blank">LinkedIn</a>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <p>&copy; <span id="year"></span> Your Name. Built with GitHub Pages.</p>
+    <p>&copy; <span id="year"></span> Grant Flores-DeWilde. Built with GitHub Pages.</p>
   </footer>
 
   <script src="js/main.js"></script>
