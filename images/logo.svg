@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" role="img" aria-label="Grant Flores-DeWilde">
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="#1e5fd8"/>
+  <path d="M45 24.5 A15 15 0 1 0 46.8 34.6 L37 34.6"
+        fill="none" stroke="#ffffff" stroke-width="7"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="80" y="40" font-family="system-ui, Segoe UI, Roboto, sans-serif"
+        font-size="26" font-weight="700" fill="#1a1a1a">Grant Flores-DeWilde</text>
+</svg>
