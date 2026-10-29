@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Grant Flores-DeWilde — Engineering Portfolio</title>
+  <title>Grant Flores-DeWilde - Engineering Portfolio</title>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -22,19 +22,13 @@
 
   <!-- ===== ABOUT ME ===== -->
   <section class="section intro-section" id="about">
-    <div class="projects-intro">
-      <h1>Grant Flores-DeWilde</h1>
-      <p class="tagline">Mechanical Engineering · FEA · Precision Manufacturing · Robotics</p>
-    </div>
     <p class="about-blurb">
-      I'm a Mechanical Engineering student (BSE) and Ben Franklin Scholar at the
-      University of Pennsylvania who likes taking a design from simulation all the way
-      to a machined, tested part. As HV Battery Pack Responsible Engineer for Penn
-      Electric Racing, I lead the mechanical design and manufacturing of our Formula SAE
-      high-voltage battery system; in the lab I build fixtures and mechanisms for
+      Hi! I'm a Mechanical Engineering student and Ben Franklin Scholar at the
+      University of Pennsylvania who loves tackling tough and exciting challenges! 
+      As HV Battery Pack Responsible Engineer for Penn Electric Racing, I lead 
+      the mechanical design and manufacturing of our Formula SAE
+      high-voltage battery system. in the lab I build fixtures and mechanisms for
       reconfigurable robots at ModLab and teach precision machining to fellow students.
-      I care about rules-driven design, clean manufacturing, and backing up decisions
-      with analysis and prototypes.
     </p>
   </section>
 
@@ -42,16 +36,10 @@
   <section class="section featured-section" id="projects">
     <article class="featured-card">
       <div class="featured-header">
-        <span class="featured-badge">Featured Project</span>
         <h2>High-Voltage Battery Pack &amp; Battery Management Enclosure</h2>
         <p class="featured-meta">
-          Penn Electric Racing (Formula SAE Electric) · Mechanical HV Pack
-          Responsible Engineer · April 2026–Present
+          Penn Electric Racing (Formula SAE Electric)
         </p>
-        <ul class="tech-tags header-tags">
-          <li class="year-tag">Freshman</li>
-          <li class="year-tag">Sophomore</li>
-        </ul>
       </div>
 
       <!-- Hero image -->
@@ -59,7 +47,7 @@
         <img src="images/pack-in-chassis.png"
              alt="High-voltage battery pack installed within the Formula SAE tubular chassis"
              class="featured-img" />
-        <figcaption>HV pack integrated within the Formula SAE tubular chassis (CAD render).</figcaption>
+        <figcaption>HV pack integrated within the Formula SAE tubular chassis.</figcaption>
       </figure>
 
       <!-- Key metrics -->
@@ -101,9 +89,9 @@
           <p>
             I designed the welded aluminum tractive battery container that protects and
             surrounds the cell substacks, as well as the separate battery management
-            enclosure — including the arrangement of its COTS hardware and the mechanical
-            mounting and connector interfaces. A teammate designed the cell substacks, and
-            the electrical team owns the PCB designs. The redesign supports the vehicle's
+            enclosure. Scope also includes the arrangement of its COTS hardware and the mechanical
+            mounting and connector interfaces. Coordinated with cell substack designer, and
+            the electrical PCB designers. The redesign supports the vehicle's
             transition from rear-wheel drive to four-wheel drive while balancing Formula SAE
             requirements, mass, thermal constraints, waterproofing, chassis clearance, and
             serviceability.
@@ -119,8 +107,8 @@
         <div class="sub-block">
           <h3>Rules-driven container &amp; mounting optimization</h3>
           <p>
-            The container is built from 0.09-inch 6061-T6 aluminum panels — the applicable
-            minimum sheet thickness — designed for welded construction against Formula SAE
+            The container is built from 0.09-inch 6061-T6 aluminum panels (applicable
+            minimum sheet thickness) designed for welded construction against Formula SAE
             Structural Equivalency Spreadsheet (SES) requirements. I iteratively reduced the
             mounting-tab geometry and evaluated the redesign with FEA under the prescribed
             40g lateral and 20g vertical acceleration load cases. Each tab is designed to be
@@ -148,7 +136,7 @@
           <figure class="fig">
             <img src="images/primary-container.png"
                  alt="Main tractive battery container showing internal arrangement and mounting interfaces" />
-            <figcaption>Main tractive battery container — structural packaging and mounting interfaces.</figcaption>
+            <figcaption>Main tractive battery container.</figcaption>
           </figure>
         </div>
 
@@ -159,9 +147,7 @@
             The team evaluated whether passive heat rejection would be sufficient for the
             higher-capacity pack. Endurance-run thermal simulations predicted cell
             temperatures would remain below the 60 °C limit for the modeled operating
-            conditions, so passive cooling was selected over a liquid system — avoiding extra
-            weight and complexity and removing the need for ventilation openings through the
-            waterproof container.
+            conditions, so passive cooling was selected over a powered air or liquid system. 
           </p>
           <p class="caveat">
             This result supports the cooling concept for the simulated endurance-run
@@ -189,7 +175,7 @@
           </p>
           <p class="caveat">
             The enclosure is designed for additive manufacturing in ULTEM. The PLA fit check verifies
-            geometry only — not final material performance or environmental qualification.
+            geometry and material is not representative of final parts.
           </p>
           <figure class="fig">
             <img src="images/management-enclosure.png"
@@ -266,15 +252,6 @@
 
   <!-- ===== ADDITIONAL PROJECTS GRID ===== -->
   <section class="section">
-    <h2 class="section-title">More Projects</h2>
-
-    <div class="filter-bar" id="filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="fsae">Formula SAE</button>
-      <button class="filter-btn" data-filter="research">Robotics Research</button>
-      <button class="filter-btn" data-filter="design">Design &amp; Build</button>
-    </div>
-
     <div class="projects-grid">
 
       <!-- 1. ModLab Fatigue Fixture -->
@@ -286,19 +263,19 @@
             At ModLab (Pennovation Works), designed a custom fatigue-testing fixture for
             twisted-string actuators on a self-configurable modular robot. Redesigned the
             actuator with bearing integration and symmetric geometry, increasing fatigue life
-            from 10,000 to 50,000 cycles (5× improvement).
+            from 10,000 to 50,000 cycles (5x improvement).
           </p>
           <ul class="tech-tags">
             <li>SolidWorks</li><li>Design for Test</li><li>Fatigue</li>
             <li class="year-tag">Freshman</li><li class="year-tag">Sophomore</li>
           </ul>
-          <div class="project-links"><span class="note">Acknowledged — IEEE ICRA 2027 submission</span></div>
+          <div class="project-links"><span class="note">Acknowledged - IEEE ICRA 2027 submission</span></div>
         </div>
       </article>
-    
+
       <!-- 2. Stirling Engine -->
       <article class="project-card" data-category="design">
-        <div class="img-placeholder card-img"><span>Image: stirling-engine.jpg</span></div>
+        <img src="images/stirling-engine.jpg" alt="Spider-Man Stirling engine" class="card-img" />
         <div class="project-body">
           <h3>Spider-Man Stirling Engine</h3>
           <p>
@@ -350,7 +327,7 @@
       <article class="project-card" data-category="design">
         <div class="img-placeholder card-img"><span>Image: polaris-compass.jpg</span></div>
         <div class="project-body">
-          <h3>Polaris — GPS Anchored Compass</h3>
+          <h3>Polaris: GPS Anchored Compass</h3>
           <p>
             Developed a GPS-based electronic compass that points back to user-defined
             waypoints, integrating an Arduino, GPS, IMU, and LED matrix for real-time
@@ -367,7 +344,7 @@
       <article class="project-card" data-category="research">
         <div class="img-placeholder card-img"><span>Image: vtt-docking.jpg</span></div>
         <div class="project-body">
-          <h3>Variable Topology Truss — Docking Mechanism</h3>
+          <h3>Variable Topology Truss Docking Mechanism</h3>
           <p>
             Designing and prototyping a docking mechanism for the Variable Topology Truss
             (VTT), a reconfigurable robotic structure at ModLab. <em>Ongoing.</em>
@@ -406,21 +383,21 @@
       <div class="skill-group">
         <h3>Software</h3>
         <ul>
-          <li>CAD — SolidWorks, Autodesk, Onshape</li>
-          <li>Finite Element Analysis (FEA)</li>
+          <li>CAD (SolidWorks, Autodesk, Onshape)</li>
+          <li>Finite Element Analysis (Ansys)</li>
           <li>Python, Java, OCaml</li>
           <li>Arduino IDE</li>
-          <li>CNC — Mastercam, ProtoTRAK</li>
+          <li>CAM (Mastercam, ProtoTRAK)</li>
         </ul>
       </div>
       <div class="skill-group">
         <h3>Hardware &amp; Manufacturing</h3>
         <ul>
-          <li>Manual milling &amp; turning</li>
+          <li>Manual milling &amp; CNC</li>
           <li>3D printing (incl. ULTEM/PLA)</li>
           <li>Laser cutting</li>
-          <li>GD&amp;T &amp; tolerance stack-up</li>
-          <li>Circuits &amp; precision metrology</li>
+          <li>GD&amp;T + tolerance stack-up</li>
+          <li>Circuits</li>
         </ul>
       </div>
       <div class="skill-group">
@@ -428,9 +405,8 @@
         <ul>
           <li>University of Pennsylvania</li>
           <li>BSE, Mechanical Engineering</li>
-          <li>Ben Franklin Scholar · 3.82 GPA</li>
+          <li>Ben Franklin Scholar</li>
           <li>Expected May 2029</li>
-          <li>Spanish — intermediate</li>
         </ul>
       </div>
     </div>
@@ -449,7 +425,7 @@
   </section>
 
   <footer class="footer">
-    <p>&copy; <span id="year"></span> Grant Flores-DeWilde. Built with GitHub Pages.</p>
+    <p>&copy; <span id="year"></span> Grant Flores-DeWilde.</p>
   </footer>
 
   <script src="js/main.js"></script>
