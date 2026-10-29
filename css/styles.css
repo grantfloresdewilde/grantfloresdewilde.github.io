@@ -256,3 +256,11 @@ nav { display: flex; align-items: center; gap: 1.5rem; }
 
 /* Logo image sizing (only needed if you used the logo.svg option) */
 .logo-img { height: 34px; display: block; }
+
+/* Video in a project card — same sizing as image cards */
+video.card-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
