@@ -274,3 +274,8 @@ video.card-img {
   object-position: center;
   display: block;
 }
+
+/* Leave room under the sticky navbar when jumping to a section */
+section[id] {
+  scroll-margin-top: 90px;
+}
