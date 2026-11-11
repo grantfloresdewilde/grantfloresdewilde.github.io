@@ -43,7 +43,7 @@ if (caseToggle && caseDetails) {
       caseDetails.setAttribute("hidden", "");
       caseToggle.setAttribute("aria-expanded", "false");
       caseToggle.classList.remove("open");
-      caseToggle.childNodes[0].textContent = "Read full case study ";
+      caseToggle.childNodes[0].textContent = "Read more";
     } else {
       caseDetails.removeAttribute("hidden");
       caseToggle.setAttribute("aria-expanded", "true");
@@ -52,3 +52,65 @@ if (caseToggle && caseDetails) {
     }
   });
 }
+
+// ===== PROJECT GALLERY (mosaic) =====
+(function () {
+  const modal   = document.getElementById("gallery-modal");
+  const grid    = document.getElementById("gallery-grid");
+  const titleEl = document.getElementById("gallery-title");
+  const closeBtn= document.getElementById("gallery-close");
+
+  function openGallery(card) {
+    const raw = card.getAttribute("data-gallery");
+    if (!raw) return; // no gallery defined → ignore click
+    const images = raw.split(",").map((s) => s.trim()).filter(Boolean);
+    if (images.length === 0) return;
+
+    const title = card.getAttribute("data-title") || "";
+    titleEl.textContent = title;
+
+    // Build the mosaic (supports images AND videos)
+grid.innerHTML = "";
+images.forEach((src, i) => {
+  const isVideo = /\.(mp4|webm|ogg|mov)$/i.test(src);
+  if (isVideo) {
+    const video = document.createElement("video");
+    video.src = src;
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    grid.appendChild(video);
+  } else {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = `${title} — image ${i + 1}`;
+    img.loading = "lazy";
+    grid.appendChild(img);
+  }
+});
+
+    grid.scrollTop = 0;
+    modal.removeAttribute("hidden");
+    document.body.style.overflow = "hidden"; // lock background scroll
+  }
+
+  function closeGallery() {
+    modal.setAttribute("hidden", "");
+    document.body.style.overflow = "";
+  }
+
+  // Open when a card is clicked
+  document.querySelectorAll(".project-card").forEach((card) => {
+    card.addEventListener("click", () => openGallery(card));
+  });
+
+  // Close controls
+  closeBtn.addEventListener("click", closeGallery);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeGallery(); // click outside the box
+  });
+  document.addEventListener("keydown", (e) => {
+    if (!modal.hasAttribute("hidden") && e.key === "Escape") closeGallery();
+  });
+})();
