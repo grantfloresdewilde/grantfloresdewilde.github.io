@@ -250,7 +250,9 @@
     <div class="projects-grid">
 
       <!-- 1. ModLab Fatigue Fixture -->
-      <article class="project-card" data-category="research">
+      <article class="project-card" data-category="research"
+        data-title="Twisted-String Actuator Fatigue Fixture"
+         data-gallery="images/actuator-fixture-1.jpg, images/actuator-fixture-2.jpg, images/actuator-fixture-3.jpg, images/actuator-fixture-4.jpg, images/actuator-fixture-5.jpg">
         <video class="card-img" autoplay loop muted playsinline>
         <source src="images/actuator-fixture.mp4" type="video/mp4" />
         </video>
@@ -271,7 +273,9 @@
       </article>
 
       <!-- 2. Stirling Engine -->
-      <article class="project-card" data-category="design">
+      <article class="project-card" data-category="design"
+         data-title="Spider-Man Stirling Engine"
+         data-gallery="images/stirling-engine-1.mp4, images/stirling-engine-3.jpg">
         <img src="images/stirling-engine.jpg" alt="Spider-Man Stirling engine" class="card-img" />
         <div class="project-body">
           <h3>Spider-Man Stirling Engine</h3>
@@ -287,25 +291,27 @@
       </article>
     
       <!-- 3. Charge Cart & Jigs -->
-      <article class="project-card" data-category="fsae">
-        <div class="img-placeholder card-img"><span>Image: charge-cart.jpg</span></div>
+      <article class="project-card" data-category="fsae"
+         data-title="Battery Charge Cart & Manufacturing Jigs"
+         data-gallery="images/charge-cart-1.jpg, images/charge-cart-2.jpg, images/jig-1.jpg, images/jig-2.jpg, images/jig-3.jpg, images/jig-4.jpg, images/jig-5.jpg, images/instron-1.jpg">
+        <img src="images/charge-box.jpg" alt="Battery Charge-Box" class="card-img" />
         <div class="project-body">
-          <h3>Battery Charge Cart &amp; Manufacturing Jigs</h3>
+          <h3>Battery Charge Box &amp; Manufacturing Jigs</h3>
           <p>
-            Designed and manufactured a battery charge cart, suspension mounting tabs, and
+            Designed and manufactured a battery charge box to implement Elcon HV charger, suspension mounting tabs, and
             15 manufacturing jigs to support vehicle assembly and testing. Also supported
             suspension control-arm compression testing.
           </p>
           <ul class="tech-tags">
             <li>SolidWorks</li><li>Fabrication</li><li>DFM</li>
-            <li class="year-tag">Freshman</li><li class="year-tag">Sophomore</li>
+            <li class="year-tag">Freshman</li>
           </ul>
         </div>
       </article>
     
       <!-- 4. Vibration Table -->
       <article class="project-card" data-category="fsae">
-        <div class="img-placeholder card-img"><span>Image: vibration-table.jpg</span></div>
+        <img src="images/vibration-table.png" alt="Vibration-Table CAD">
         <div class="project-body">
           <h3>Vibration Table</h3>
           <p>
@@ -340,7 +346,7 @@
     
       <!-- 6. VTT Docking -->
       <article class="project-card" data-category="research">
-        <div class="img-placeholder card-img"><span>Image: vtt-docking.jpg</span></div>
+        <img src="images/vtt-docking.jpg" alt="VTT Docking CAD">
         <div class="project-body">
           <h3>Variable Topology Truss Docking Mechanism</h3>
           <p>
@@ -428,6 +434,17 @@
     <p>&copy; <span id="year"></span> Grant Flores-DeWilde.</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  
+  <!-- ===== GALLERY MODAL (mosaic) ===== -->
+<div class="gallery-modal" id="gallery-modal" hidden>
+  <div class="gallery-box">
+    <div class="gallery-header">
+      <h3 id="gallery-title"></h3>
+      <button class="gallery-close" id="gallery-close" aria-label="Close gallery">&times;</button>
+    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>
